@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-scroll";
+import "./Navbar.css";
 
 const Navbar = () => {
   // Estado para controlar la visibilidad del navbar al hacer scroll

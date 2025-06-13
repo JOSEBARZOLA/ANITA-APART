@@ -1,0 +1,14 @@
+/* Estilos para el footer */
+footer {
+  background: linear-gradient(to right, #000121, #070a91, #1f18f0); 
+  color: white;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer h3 {
+  text-align: center;
+  margin: 0;
+}

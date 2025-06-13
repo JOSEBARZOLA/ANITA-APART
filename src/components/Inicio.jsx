@@ -1,5 +1,6 @@
 import React from 'react';
 import imgFondo from '../Images/Img-01.jpg'; // Asegurate que la ruta sea correcta
+import "./Inicio.css";
 
 function Inicio() {
   return (
