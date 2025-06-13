@@ -8,6 +8,14 @@
   background-color: #f6cadc; /* rosa pastel muy suave */
   padding: 2rem;
 }
+.titulo-quienes {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: #5a2a48;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
 
 .text-left, .text-right {
   width: 40%;
@@ -43,6 +51,19 @@
   transform: translateX(100%);
   opacity: 0;
 }
+.quienes-somos-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.quienes-somos-bloques {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+}
 
 /* Responsive: columnas en móvil */
 @media (max-width: 768px) {
@@ -52,5 +73,9 @@
   }
   .text-left, .text-right {
     width: 90%;
+  }
+  .quienes-somos-bloques {
+    flex-direction: column;
+    align-items: center;
   }
 }

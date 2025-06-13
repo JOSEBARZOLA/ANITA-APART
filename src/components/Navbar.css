@@ -1,51 +1,47 @@
-/* Estilo para el navbar */
 nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 40px;
-  background: linear-gradient(to right, #000121, #070a91, #1f18f0);
+  height: 60px;
+  background: linear-gradient(to right, #ffe6f0, #f5c1d7, #e6a6c7); /* rosa pastel degradado */
   background-size: cover;
   background-repeat: no-repeat;
-  color: white;
+  color: #5a2a48; /* rosa oscuro */
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px 20px;
   z-index: 1000;
-  transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out; /* Añadimos transición de opacidad */
-}
-
-nav.hidden {
-  transform: translateY(-100%); /* Desplazamiento hacia arriba */
-  opacity: 0; /* Hacemos el navbar completamente transparente */
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  padding: 10px;
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(244, 166, 193, 0.4); /* sombra rosa suave */
+  transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
   cursor: default;
 }
 
+nav.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+nav a {
+  color: #5a2a48;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 500;
+  font-family: 'Quicksand', sans-serif;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
 nav a:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
+  color: #b62e6b; /* rosa más intenso al pasar el mouse */
 }
 
 nav::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(4, 17, 85, 0.5);
-  z-index: -1;
+  display: none; /* Eliminamos la capa oscura */
 }
 
-/* Estilos del menú en dispositivos grandes */
+/* Estilos del menú */
 .nav-links {
   display: flex;
   list-style: none;
@@ -62,60 +58,49 @@ nav::before {
   padding: 10px;
 }
 
-.nav-links.active {
-  display: block;
-}
-
+/* Responsive */
 @media (max-width: 767px) {
   .nav-links {
-    display: none; /* Escondemos el menú por defecto en pantallas pequeñas */
+    display: none;
     position: absolute;
     top: 60px;
     left: 0;
     width: 100%;
-    background: linear-gradient(to right, #000121, #070a91, #1f18f0);
+    background: linear-gradient(to right, #ffe6f0, #f5c1d7, #e6a6c7);
     text-align: center;
     padding: 10px 0;
+    box-shadow: 0 8px 16px rgba(244, 166, 193, 0.25);
   }
 
   .nav-links.active {
     display: block;
   }
 
-  /* Estilos del botón hamburguesa */
   .hamburger {
     display: block;
     cursor: pointer;
     width: 30px;
     height: 25px;
     position: absolute;
-    left: 20px; /* Posicionamos el botón hamburguesa a la izquierda */
-    top: 20px;
+    left: 20px;
+    top: 18px;
   }
 
   .hamburger .bar {
     width: 100%;
     height: 4px;
-    background-color: white;
+    background-color: #5a2a48;
     position: absolute;
     left: 0;
     transition: all 0.3s ease;
   }
 
-  .hamburger .bar:nth-child(1) {
-    top: 0;
-  }
-
-  .hamburger .bar:nth-child(2) {
-    top: 10px;
-  }
-
-  .hamburger .bar:nth-child(3) {
-    top: 20px;
-  }
+  .hamburger .bar:nth-child(1) { top: 0; }
+  .hamburger .bar:nth-child(2) { top: 10px; }
+  .hamburger .bar:nth-child(3) { top: 20px; }
 }
 
-/* Cambio visual del botón hamburguesa cuando el menú está abierto */
+/* Animación del botón hamburguesa */
 .nav-links.active + .hamburger .bar:nth-child(1) {
   transform: rotate(45deg);
   top: 10px;
@@ -130,11 +115,7 @@ nav::before {
   top: 10px;
 }
 
-
-
-
-
-/* Espacio superior para las secciones para que no queden tapadas por el navbar */
+/* Espacio superior para las secciones */
 section {
-  padding-top: 100px; /* Ajusta este valor según el alto de tu navbar */
+  padding-top: 100px;
 }
