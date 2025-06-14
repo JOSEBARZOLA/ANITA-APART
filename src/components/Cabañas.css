@@ -1,5 +1,6 @@
+/* Cabanas.css */
 .cabanas-section {
-  width: 100%; /* ocupa todo el ancho */
+  width: 100%;
   max-width: 1200px;
   margin: 3rem auto;
   padding: 0 1rem;
@@ -17,24 +18,24 @@
 .cabana-card {
   display: flex;
   flex-direction: row;
-  gap: 0; /* sin separación interna, el padding lo da cada bloque */
   background: #fff;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 4rem;
-  height: 420px;
+  margin-bottom: 2rem;
+  height: 450px;
+  /* Evita scroll vertical */
 }
 
 /* SLIDER IMAGENES */
 .slider-imagenes {
-  width: 80%;
-  position: relative;
-  overflow: hidden;
+  width: 45%; /* 40% del card */
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 12px 0 0 12px;
+  flex-shrink: 0; /* que no se reduzca */
 }
 
 .slider-img {
@@ -43,10 +44,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   opacity: 0;
   transition: opacity 1s ease-in-out;
-  z-index: 0;
+  user-select: none;
+  pointer-events: none;
 }
 
 .slider-img.active {
@@ -54,23 +55,59 @@
   z-index: 1;
 }
 
-/* TEXTO DESCRIPCIÓN */
+/* DESCRIPCIÓN CABANA */
 .descripcion-cabana {
-  width: 60%;
+  width: 55%; /* 60% del card */
+  padding: 2rem 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
   color: #333;
-  overflow-y: auto;
   height: 100%;
   box-sizing: border-box;
+  overflow-y: hidden;
 }
 
 .descripcion-cabana h3 {
   font-size: 1.6rem;
+  margin-bottom: 0.8rem;
 }
 
 .descripcion-cabana p {
   line-height: 1.5;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.descripcion-cabana ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.descripcion-cabana li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* RESPONSIVE */
+/* Pantallas pequeñas: apilar vertical */
+@media (max-width: 768px) {
+  .cabana-card {
+    flex-direction: column;
+    height: auto; /* que crezca según contenido */
+  }
+
+  .slider-imagenes {
+    width: 100%;
+    height: 250px; /* altura fija para slider en móvil */
+    border-radius: 12px 12px 0 0;
+  }
+
+  .descripcion-cabana {
+    width: 100%;
+    padding: 1.5rem 1.5rem 2rem;
+    height: auto;
+    overflow-y: visible;
+  }
 }

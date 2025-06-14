@@ -1,7 +1,7 @@
+// Cabanas.jsx
 import React, { useState, useEffect } from "react";
 import "./Cabañas.css";
 
-// Importa acá las imágenes de cada cabaña (asegurate la ruta)
 import cabana01_img1 from "../Images/cabana_01/frenteDto_01.jpg";
 import cabana01_img2 from "../Images/cabana_01/cocina_01.jpg";
 import cabana01_img3 from "../Images/cabana_01/cocina_02.jpg";
@@ -50,7 +50,7 @@ function Slider({ images }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((i) => (i === images.length - 1 ? 0 : i + 1));
-    }, 4000);
+    }, 6000);
     return () => clearInterval(interval);
   }, [images.length]);
 
@@ -77,35 +77,37 @@ export default function Cabanas() {
         </div>
 
         <div className="cabana-card slide-in-left">
-          <div className="slider-imagenes">
-            <Slider images={cabana1Images} />
-          </div>
+          <Slider images={cabana1Images} />
           <div className="descripcion-cabana">
             <h3>Cabaña 1</h3>
-            <p>Esta es una acogedora cabaña ideal para descansar...</p>
-            <p>Con espacios amplios y luminosos, perfecta para familias...</p>
+            <p>
+              Esta cabaña ofrece espacios cómodos y totalmente equipados, ideales para grupos de hasta 6 personas.
+            </p>
             <ul>
-              <li>WiFi gratuito</li>
-              <li>Aire acondicionado</li>
-              <li>Cocina equipada</li>
-              <li>Estacionamiento privado</li>
+              <li><strong>Cocina:</strong> Heladera, microondas, cocina de 4 hornallas con horno, vajilla y utensilios para 6 personas, ollas para cocinar.</li>
+              <li><strong>Baño:</strong> Incluye jabón líquido para manos, dos jabones individuales y dos rollos de papel higiénico.</li>
+              <li><strong>Habitación:</strong> Una cama matrimonial, aire acondicionado frío/calor.</li>
+              <li><strong>Comedor:</strong> Dos camas marineras, calefactor eléctrico de vitroconvección y ventilador de techo.</li>
+              <li><strong>Servicio de blancos:</strong> Sábanas, cubrecamas y juego de toalla/toallón por persona.</li>
+              <li><strong>Entretenimiento:</strong> Smart TV con conexión a internet wifi.</li>
             </ul>
           </div>
         </div>
 
         <div className="cabana-card slide-in-right">
-          <div className="slider-imagenes">
-            <Slider images={cabana2Images} />
-          </div>
+          <Slider images={cabana2Images} />
           <div className="descripcion-cabana">
             <h3>Cabaña 2</h3>
-            <p>Esta cabaña ofrece un ambiente cálido y cómodo...</p>
-            <p>Ideal para parejas o familias que buscan relajarse...</p>
+            <p>
+              Ideal para familias pequeñas o parejas, esta cabaña combina calidez y funcionalidad.
+            </p>
             <ul>
-              <li>Calefacción eléctrica</li>
-              <li>Jardín privado</li>
-              <li>Parrilla</li>
-              <li>Servicio de blancos</li>
+              <li><strong>Cocina:</strong> Heladera, microondas, cocina eléctrica de 2 hornallas con horno, vajilla y utensilios para 4 personas, ollas para cocinar.</li>
+              <li><strong>Baño:</strong> Incluye jabón líquido para manos, dos jabones individuales y dos rollos de papel higiénico.</li>
+              <li><strong>Habitación:</strong> Cama matrimonial, estufa eléctrica y ventilador de pie.</li>
+              <li><strong>Comedor:</strong> Cama marinera, calefactor eléctrico de vitroconvección y aire acondicionado frío.</li>
+              <li><strong>Servicio de blancos:</strong> Sábanas, cubrecamas y juego de toalla/toallón por persona.</li>
+              <li><strong>Entretenimiento:</strong> Smart TV con conexión a internet wifi.</li>
             </ul>
           </div>
         </div>

@@ -36,7 +36,8 @@ function QuienesSomos() {
         <p> Disfruta de vistas panorámicas desde nuestro jardín y piscina, el lugar perfecto para desconectarte y renovar energías durante tus vacaciones.</p>
         <p>Nuestro alojamiento es perfecto para parejas y familias con niños, con un amplio parque que incluye juegos de plaza y espacios verdes para el disfrute de todos.</p>
         <p>Contamos con dos unidades equipadas con cocina-comedor, habitación, baño, aire acondicionado y calefacción eléctrica, diseñadas para alojar de 2 a 6 personas.</p>
-        <p>Además, ofrecemos servicio de blancos y amenities para mayor comodidad. </p>
+        <p>Además, ofrecemos servicio de blancos y amenities para mayor comodidad.</p>
+        <br />
       </div>
       <div className={`text-right ${visible ? "slide-in-right" : "slide-out-right"}`}>
         <p>Disponemos de estacionamiento techado y privado para nuestros huéspedes.</p>
