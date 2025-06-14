@@ -24,7 +24,38 @@
   overflow: hidden;
   margin-bottom: 2rem;
   height: 450px;
-  /* Evita scroll vertical */
+ opacity: 0;
+  transform: translateX(50px); /* o -50px para el left */
+  transition: opacity 1s ease, transform 1s ease;
+}
+.cabana-card.slide-in-left,
+.cabana-card.slide-in-right {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.hidden-to-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.hidden-to-right {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.slide-in-left {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.slide-in-right {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 /* SLIDER IMAGENES */

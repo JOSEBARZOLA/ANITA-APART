@@ -2,7 +2,7 @@ import React from "react";
 import { Element } from "react-scroll";
 import Inicio from "./components/Inicio";
 import QuienesSomos from "./components/QuienesSomos";
-import Cabanas from "./components/Cabañas";
+import Cabanas from "./components/Cabanas";
 import Reservas from "./components/Reservas";
 import Contacto from "./components/Contacto";
 import Navbar from './components/Navbar'; 

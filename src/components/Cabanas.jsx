@@ -1,6 +1,7 @@
 // Cabanas.jsx
-import React, { useState, useEffect } from "react";
-import "./Cabañas.css";
+import React, { useState, useEffect, useRef } from "react";
+
+import "./Cabanas.css";
 
 import cabana01_img1 from "../Images/cabana_01/frenteDto_01.jpg";
 import cabana01_img2 from "../Images/cabana_01/cocina_01.jpg";
@@ -44,6 +45,8 @@ const cabana2Images = [
   cabana02_img8,
 ];
 
+
+
 function Slider({ images }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -69,15 +72,42 @@ function Slider({ images }) {
 }
 
 export default function Cabanas() {
+ const cabana1Ref = useRef(null);
+const cabana2Ref = useRef(null);
+const [visible1, setVisible1] = useState(false);
+const [visible2, setVisible2] = useState(false);
+
+useEffect(() => {
+  const ref1 = cabana1Ref.current;
+  const ref2 = cabana2Ref.current;
+
+  const observer1 = new IntersectionObserver(
+    ([entry]) => setVisible1(entry.isIntersecting),
+    { threshold: 0.8 }
+  );
+
+  const observer2 = new IntersectionObserver(
+    ([entry]) => setVisible2(entry.isIntersecting),
+    { threshold: 0.8 }
+  );
+
+  if (ref1) observer1.observe(ref1);
+  if (ref2) observer2.observe(ref2);
+
+  return () => {
+    if (ref1) observer1.unobserve(ref1);
+    if (ref2) observer2.unobserve(ref2);
+  };
+}, []);
+
   return (
     <section className="cabanas-wrapper">
       <div className="cabanas-section">
         <div className="titulo-wrapper">
           <h2 className="titulo-cabanas">Nuestras Cabañas</h2>
         </div>
-
-        <div className="cabana-card slide-in-left">
-          <Slider images={cabana1Images} />
+        <div  ref={cabana1Ref}  className={`cabana-card ${  visible1 ? "slide-in-left" : "hidden-to-left"  }`} >
+           <Slider images={cabana1Images} />
           <div className="descripcion-cabana">
             <h3>Cabaña 1</h3>
             <p>
@@ -94,7 +124,7 @@ export default function Cabanas() {
           </div>
         </div>
 
-        <div className="cabana-card slide-in-right">
+        <div  ref={cabana2Ref}  className={`cabana-card ${  visible2 ? "slide-in-left" : "hidden-to-left"  }`} >
           <Slider images={cabana2Images} />
           <div className="descripcion-cabana">
             <h3>Cabaña 2</h3>
