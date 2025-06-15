@@ -1,14 +1,21 @@
 /* Estilos para el footer */
 footer {
-  background: linear-gradient(to right, #000121, #070a91, #1f18f0); 
-  color: white;
-  padding: 20px 0;
+   background: linear-gradient(to right, #ffe6f0, #f5c1d7, #e6a6c7); 
+  color: #5a2a48;
+  padding: 10px 0;
   position: relative;
   bottom: 0;
   width: 100%;
 }
 
 footer h3 {
-  text-align: center;
-  margin: 0;
+  color: #5a2a48;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 500;
+  font-family: 'Quicksand', sans-serif;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+footer h3:hover {
+  color: #b62e6b; /* rosa más intenso al pasar el mouse */
 }

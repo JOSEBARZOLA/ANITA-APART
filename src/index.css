@@ -12,7 +12,7 @@ html, body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #f6cadc; /* rosa pastel muy suave */
+  background-color: #0c058b; /* rosa pastel muy suave */
 }
 /* Control básico del tamaño del texto en código */
 code {

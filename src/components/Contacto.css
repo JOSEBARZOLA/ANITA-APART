@@ -43,8 +43,8 @@
 }
 
 .contacto-form button {
-  background-color: #b62e6b;
-  color: #fff;
+  background-color: #f0a0c2;
+  color: #5a2a48;
   padding: 0.9rem 1.5rem;
   border: none;
   border-radius: 8px;
@@ -56,6 +56,7 @@
 
 .contacto-form button:hover {
   background-color: #860354;
+  color: #f0a0c2;
 }
 
 

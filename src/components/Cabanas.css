@@ -4,6 +4,7 @@
   max-width: 1100px;
   margin: 3rem auto;
   padding: 0 1rem;
+  background: linear-gradient(to right, #ffe6f0, #f5c1d7, #e6a6c7); 
 }
 
 .titulo-cabanas {
