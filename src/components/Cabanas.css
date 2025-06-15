@@ -1,7 +1,7 @@
 /* Cabanas.css */
 .cabanas-section {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 3rem auto;
   padding: 0 1rem;
 }
@@ -22,18 +22,13 @@
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 2rem;
-  height: 450px;
- opacity: 0;
-  transform: translateX(50px); /* o -50px para el left */
-  transition: opacity 1s ease, transform 1s ease;
+  margin-bottom: 1rem;
+  opacity: 0;
+  min-height: 460px; /* para no quedar muy chica en entradas rápidas */
 }
-.cabana-card.slide-in-left,
-.cabana-card.slide-in-right {
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 1s ease, transform 1s ease;
-}
+
+/* Transiciones visibilidad */
+
 .hidden-to-left {
   opacity: 0;
   transform: translateX(-100px);
@@ -41,13 +36,13 @@
 }
 
 .hidden-to-right {
-  opacity: 0;
+   opacity: 0;
   transform: translateX(100px);
   transition: opacity 1s ease, transform 1s ease;
 }
 
 .slide-in-left {
-  opacity: 1;
+   opacity: 1;
   transform: translateX(0);
   transition: opacity 1s ease, transform 1s ease;
 }
@@ -60,13 +55,12 @@
 
 /* SLIDER IMAGENES */
 .slider-imagenes {
-  width: 45%; /* 40% del card */
-  height: 100%;
+  width: 45%;
   position: relative;
   object-fit: cover;
   overflow: hidden;
   border-radius: 12px 0 0 12px;
-  flex-shrink: 0; /* que no se reduzca */
+  flex-shrink: 0;
 }
 
 .slider-img {
@@ -88,37 +82,51 @@
 
 /* DESCRIPCIÓN CABANA */
 .descripcion-cabana {
-  width: 55%; /* 60% del card */
-  padding: 2rem 2.5rem;
+  width: 55%;
+  padding: 1.5rem 2rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   color: #333;
-  height: 100%;
   box-sizing: border-box;
-  overflow-y: hidden;
 }
 
 .descripcion-cabana h3 {
-  font-size: 1.6rem;
-  margin-bottom: 0.8rem;
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  color: #5a2a48;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  font-family: 'Quicksand', sans-serif;
 }
 
 .descripcion-cabana p {
+  color: #860354;
+  font-family: 'Quicksand', sans-serif;
   line-height: 1.5;
-  margin-bottom: 1rem;
-  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  text-align: justify;
+  font-size: clamp(0.7rem, 1.8vw, 0.95rem);
 }
 
 .descripcion-cabana ul {
   padding-left: 1.2rem;
-  margin: 0;
+  margin-bottom: 1rem;
 }
 
 .descripcion-cabana li {
-  margin-bottom: 0.5rem;
-  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+  color: #860354;
+  font-family: 'Quicksand', sans-serif;
+  font-size: clamp(0.65rem, 1.5vw, 0.85rem);
   line-height: 1.4;
+  text-align: justify;
+  text-indent: -1rem;
+  padding-left: 1rem;
+}
+
+.descripcion-cabana li::marker {
+  color: #5a2a48;
 }
 
 /* RESPONSIVE */
@@ -138,7 +146,5 @@
   .descripcion-cabana {
     width: 100%;
     padding: 1.5rem 1.5rem 2rem;
-    height: auto;
-    overflow-y: visible;
   }
 }

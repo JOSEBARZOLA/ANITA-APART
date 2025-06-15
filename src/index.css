@@ -18,8 +18,3 @@ html, body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
-/* Algunas reglas básicas para centrar y distribuir el contenido */
-.App {
-  text-align: center;
-  flex: 1;
-}

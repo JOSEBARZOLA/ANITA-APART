@@ -63,6 +63,7 @@
   justify-content: center;
   gap: 2rem;
   width: 100%;
+  height: 600px;
 }
 
 /* Responsive: columnas en móvil */
@@ -77,5 +78,6 @@
   .quienes-somos-bloques {
     flex-direction: column;
     align-items: center;
+
   }
 }

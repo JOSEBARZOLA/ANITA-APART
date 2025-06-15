@@ -73,32 +73,32 @@ function Slider({ images }) {
 
 export default function Cabanas() {
  const cabana1Ref = useRef(null);
-const cabana2Ref = useRef(null);
-const [visible1, setVisible1] = useState(false);
-const [visible2, setVisible2] = useState(false);
+  const cabana2Ref = useRef(null);
+  const [visible1, setVisible1] = useState(false);
+  const [visible2, setVisible2] = useState(false);
 
-useEffect(() => {
-  const ref1 = cabana1Ref.current;
-  const ref2 = cabana2Ref.current;
+  useEffect(() => {
+    const ref1 = cabana1Ref.current;
+    const ref2 = cabana2Ref.current;
 
-  const observer1 = new IntersectionObserver(
-    ([entry]) => setVisible1(entry.isIntersecting),
-    { threshold: 0.8 }
-  );
+    const observer1 = new IntersectionObserver(
+      ([entry]) => setVisible1(entry.isIntersecting),
+      { threshold: 0.8 }
+    );
 
-  const observer2 = new IntersectionObserver(
-    ([entry]) => setVisible2(entry.isIntersecting),
-    { threshold: 0.8 }
-  );
+    const observer2 = new IntersectionObserver(
+      ([entry]) => setVisible2(entry.isIntersecting),
+      { threshold: 0.8 }
+    );
 
-  if (ref1) observer1.observe(ref1);
-  if (ref2) observer2.observe(ref2);
+    if (ref1) observer1.observe(ref1);
+    if (ref2) observer2.observe(ref2);
 
-  return () => {
-    if (ref1) observer1.unobserve(ref1);
-    if (ref2) observer2.unobserve(ref2);
-  };
-}, []);
+    return () => {
+      if (ref1) observer1.unobserve(ref1);
+      if (ref2) observer2.unobserve(ref2);
+    };
+  }, []);
 
   return (
     <section className="cabanas-wrapper">
@@ -106,38 +106,36 @@ useEffect(() => {
         <div className="titulo-wrapper">
           <h2 className="titulo-cabanas">Nuestras Cabañas</h2>
         </div>
-        <div  ref={cabana1Ref}  className={`cabana-card ${  visible1 ? "slide-in-left" : "hidden-to-left"  }`} >
-           <Slider images={cabana1Images} />
+        <div
+          ref={cabana1Ref}
+          className={`cabana-card ${visible1 ? "slide-in-right" : "hidden-to-left"}`}
+        >
+          <Slider images={cabana1Images} />
           <div className="descripcion-cabana">
             <h3>Cabaña 1</h3>
-            <p>
-              Esta cabaña ofrece espacios cómodos y totalmente equipados, ideales para grupos de hasta 6 personas.
-            </p>
+            <p>Esta cabaña ofrece espacios cómodos y totalmente equipados, ideales para grupos de hasta 6 personas.</p> 
             <ul>
-              <li><strong>Cocina:</strong> Heladera, microondas, cocina de 4 hornallas con horno, vajilla y utensilios para 6 personas, ollas para cocinar.</li>
-              <li><strong>Baño:</strong> Incluye jabón líquido para manos, dos jabones individuales y dos rollos de papel higiénico.</li>
-              <li><strong>Habitación:</strong> Una cama matrimonial, aire acondicionado frío/calor.</li>
-              <li><strong>Comedor:</strong> Dos camas marineras, calefactor eléctrico de vitroconvección y ventilador de techo.</li>
-              <li><strong>Servicio de blancos:</strong> Sábanas, cubrecamas y juego de toalla/toallón por persona.</li>
-              <li><strong>Entretenimiento:</strong> Smart TV con conexión a internet wifi.</li>
+              <li><strong>Cocina:</strong>Heladera, microondas, cocina de 4 hornallas con horno, vajilla y utensilios para 6 personas, ollas para cocinar.</li>
+              <li><strong>Baño:</strong>Incluye jabón líquido para manos, dos jabones individuales y dos rollos de papel higiénico.</li>
+              <li><strong>Habitación:</strong>Una cama matrimonial, aire acondicionado frío/calor.</li>
+              <li><strong>Comedor:</strong>Dos camas marineras, calefactor eléctrico de vitroconvección y ventilador de techo.</li>
+              <li><strong>Servicio de blancos:</strong>Sábanas, cubrecamas y juego de toalla/toallón por persona.</li>
+              <li><strong>Entretenimiento:</strong>Smart TV con conexión a internet wifi.</li>
             </ul>
           </div>
         </div>
-
-        <div  ref={cabana2Ref}  className={`cabana-card ${  visible2 ? "slide-in-left" : "hidden-to-left"  }`} >
+        <div ref={cabana2Ref} className={`cabana-card ${visible2 ? "slide-in-left" : "hidden-to-right"}`}>
           <Slider images={cabana2Images} />
           <div className="descripcion-cabana">
             <h3>Cabaña 2</h3>
-            <p>
-              Ideal para familias pequeñas o parejas, esta cabaña combina calidez y funcionalidad.
-            </p>
+            <p>Ideal para familias pequeñas o parejas, esta cabaña combina calidez y funcionalidad.</p>
             <ul>
-              <li><strong>Cocina:</strong> Heladera, microondas, cocina eléctrica de 2 hornallas con horno, vajilla y utensilios para 4 personas, ollas para cocinar.</li>
-              <li><strong>Baño:</strong> Incluye jabón líquido para manos, dos jabones individuales y dos rollos de papel higiénico.</li>
-              <li><strong>Habitación:</strong> Cama matrimonial, estufa eléctrica y ventilador de pie.</li>
-              <li><strong>Comedor:</strong> Cama marinera, calefactor eléctrico de vitroconvección y aire acondicionado frío.</li>
-              <li><strong>Servicio de blancos:</strong> Sábanas, cubrecamas y juego de toalla/toallón por persona.</li>
-              <li><strong>Entretenimiento:</strong> Smart TV con conexión a internet wifi.</li>
+              <li><strong>Cocina:</strong>Heladera, microondas, cocina eléctrica de 2 hornallas con horno, vajilla y utensilios para 4 personas, ollas para cocinar.</li>
+              <li><strong>Baño:</strong>Incluye jabón líquido para manos, dos jabones individuales y dos rollos de papel higiénico.</li>
+              <li><strong>Habitación:</strong>Cama matrimonial, estufa eléctrica y ventilador de pie.</li>
+              <li><strong>Comedor:</strong>Cama marinera, calefactor eléctrico de vitroconvección y aire acondicionado frío.</li>
+              <li><strong>Servicio de blancos:</strong>Sábanas, cubrecamas y juego de toalla/toallón por persona.</li>
+              <li><strong>Entretenimiento:</strong>Smart TV con conexión a internet wifi.</li>
             </ul>
           </div>
         </div>
